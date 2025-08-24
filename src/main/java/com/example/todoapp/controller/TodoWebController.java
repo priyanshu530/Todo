@@ -24,14 +24,14 @@ public class TodoWebController {
     }
 
     // Save new todo
-    @PostMapping("/saveTodo")
+    @PostMapping("/add")
     public String saveTodo(@ModelAttribute("todo") Todo todo) {
         todoService.createTodo(todo);
         return "redirect:/";
     }
 
     // Update todo (mark complete/incomplete)
-    @GetMapping("/updateTodo/{id}")
+    @GetMapping("/update/{id}")
     public String updateTodo(@PathVariable("id") Long id) {
         Todo todo = todoService.getTodoById(id);
         todo.setCompleted(!todo.isCompleted()); // toggle status
@@ -40,7 +40,7 @@ public class TodoWebController {
     }
 
     // Delete todo
-    @GetMapping("/deleteTodo/{id}")
+    @GetMapping("/delete/{id}")
     public String deleteTodo(@PathVariable("id") Long id) {
         todoService.deleteTodo(id);
         return "redirect:/";

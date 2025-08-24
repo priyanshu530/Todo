@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -19,4 +21,5 @@ public class Todo {
 
     private String title;
     private boolean completed = false;
+    private LocalDate dueDate;
 }

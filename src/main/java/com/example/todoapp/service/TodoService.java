@@ -15,7 +15,7 @@ public class TodoService {
     }
 
     public List<Todo> getAllTodos(){
-        return todoRepository.findAll();
+        return todoRepository.findAllByOrderByDueDateAsc();
     }
 
     public Todo getTodoById(Long id){
